@@ -1,5 +1,4 @@
 { config, lib, pkgs, pkgs-stable, username, ... }:
-
 {
   imports =
     [
@@ -11,23 +10,12 @@
     ];
 
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nixpkgs.config.allowUnfree = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
-
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
 
   networking.hostName = "nixos";
   networking.nameservers = ["8.8.8.8" "178.22.122.100" "1.1.1.1"];
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.firewall.allowedTCPPorts = [ ... ];
 
 
   time.timeZone = "Asia/Terhan";
@@ -73,6 +61,15 @@
   hardware.graphics.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
 
   system.stateVersion = "24.05"; # Did you read the comment?

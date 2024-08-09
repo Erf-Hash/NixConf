@@ -1,5 +1,4 @@
 { config, pkgs, pkgs-stable, username, ... }:
-
 {
   imports = [
     ./modules/hyprland.nix
