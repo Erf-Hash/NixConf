@@ -44,8 +44,6 @@
       extensions = with firefox-addons.packages."x86_64-linux"; [
         bitwarden
         ublock-origin
-        darkreader
-        tridactyl
       ];
     };
   };
