@@ -6,6 +6,7 @@
     ./modules/starship.nix
     ./modules/alacritty.nix
     ./modules/zsh.nix
+    ./modules/firefox/firefox.nix
   ];
 
 

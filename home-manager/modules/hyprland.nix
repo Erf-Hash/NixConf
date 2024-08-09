@@ -6,7 +6,7 @@
 
       monitor = ",preferred,auto,auto";
 
-      "$browser" = "brave";
+      "$browser" = "firefox";
       "$terminal" = "alacritty";
 
       exec-once = [

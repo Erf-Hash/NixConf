@@ -9,14 +9,18 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
+
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-   stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix";
+
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixvim, stylix, ... }:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -29,14 +33,14 @@
         inherit system;
 
         modules = [
-          ./nixos/configuration.nix
-          nixvim.nixosModules.nixvim
-         stylix.nixosModules.stylix
+            ./nixos/configuration.nix
+            inputs.nixvim.nixosModules.nixvim
+            inputs.stylix.nixosModules.stylix
         ];
 
         specialArgs = {
-          inherit username; 
-          inherit pkgs-stable;
+            inherit username; 
+            inherit pkgs-stable;
         };
       };
 
@@ -48,6 +52,7 @@
         extraSpecialArgs = {
             inherit username;
             inherit pkgs-stable;
+            firefox-addons = inputs.firefox-addons;
         };
       };
     };
