@@ -29,6 +29,13 @@
 
 
   security.rtkit.enable = true;
+  security.sudo.extraRules = [
+        { 
+        users = [ "erf" ];
+        options = [ "NOPASSWD" ];
+        }
+  ];
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -42,10 +49,6 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      python3
-      fastfetch
-    ];
   };
   services.getty.autologinUser = "erf";
 

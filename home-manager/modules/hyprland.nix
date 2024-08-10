@@ -92,9 +92,9 @@
         "$mainMod" = "SUPER";
 
         bind = [
-          "$mainMod, Q, exec, $terminal"
-        	"$mainMod, C, killactive,"
-          "$mainMod, M, exit,"
+            "$mainMod, Q, exec, $terminal"
+            "$mainMod, C, killactive,"
+            "$mainMod, M, exit,"
         	"$mainMod, E, exec, $fileManager"
         	"$mainMod, V, togglefloating,"
         	"$mainMod, O, exec, $menu"
@@ -134,6 +134,10 @@
 
         	"$mainMod, mouse_down, workspace, e+1"
         	"$mainMod, mouse_up, workspace, e-1"
+
+            "$mainMod, PRINT, exec, hyprshot -m window"
+            ", PRINT, exec, hyprshot -m output"
+            "$shiftMod, PRINT, exec, hyprshot -m region"
         ];
 
         bindm = [

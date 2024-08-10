@@ -16,6 +16,7 @@
 
   home.sessionVariables = {
      EDITOR = "nvim";
+     HYPRSHOT_DIR = "~/Media/Screenshots
   };
 
 

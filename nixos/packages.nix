@@ -1,34 +1,46 @@
 { pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
+    # Development 
+    python3
     wget
-    alacritty
-    kitty
     git
-    mpv
-    btop
-    tmux
-    zsh
-    starship
+
+    # Hyprland
     waybar
     mako
     libnotify
     hyprpaper
+    hyprshot
     rofi-wayland
-    zathura
-    ripgrep
-    eza
-    brave
+    wl-clipboard
+
+    # Command-line utils
     fzf
     bat
-    wl-clipboard
+    eza
+    btop
+    tmux
+    ripgrep
     file
+    tldr
+    zsh
+    starship
+
+    # General apps
+    alacritty
+    zathura
     imv
+    mpv    
+    brave
+    firefox
+    jmtpfs
   ];
 
 
   fonts.packages = with pkgs; [
     nerdfonts
     jetbrains-mono
+    ir-standard-fonts
   ];
 }

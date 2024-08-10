@@ -7,12 +7,12 @@
     ./plugins/bufferline.nix
     ./plugins/cmp.nix
     ./plugins/comment.nix
+    ./plugins/conform.nix
     ./plugins/flash.nix
     ./plugins/fzf-lua.nix
     ./plugins/hmts.nix
     ./plugins/illuminate.nix
     ./plugins/lsp.nix
-    ./plugins/lspkind.nix
     ./plugins/lualine.nix
     ./plugins/mini.nix
     ./plugins/neo-tree.nix
@@ -24,6 +24,7 @@
     ./plugins/telescope.nix
     ./plugins/toggleterm.nix
     ./plugins/treesitter.nix
+    ./plugins/trouble.nix
   ];
 
   programs.nixvim = {
