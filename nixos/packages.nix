@@ -26,6 +26,7 @@
     tldr
     zsh
     starship
+    fastfetch
 
     # General apps
     alacritty

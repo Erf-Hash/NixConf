@@ -15,7 +15,7 @@
 
 
   networking.hostName = "nixos";
-  networking.nameservers = ["8.8.8.8" "178.22.122.100" "1.1.1.1"];
+  networking.nameservers = ["10.202.10.202" "8.8.8.8" "178.22.122.100" "1.1.1.1"];
 
 
   time.timeZone = "Asia/Terhan";
@@ -29,12 +29,7 @@
 
 
   security.rtkit.enable = true;
-  security.sudo.extraRules = [
-        { 
-        users = [ "erf" ];
-        options = [ "NOPASSWD" ];
-        }
-  ];
+  security.sudo.wheelNeedsPassword = false; 
 
   services.pipewire = {
     enable = true;
