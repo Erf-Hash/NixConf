@@ -1,27 +1,26 @@
 { config, pkgs, pkgs-stable, username, ... }:
 {
-  imports = [
-    ./modules/hyprland.nix
-    ./modules/git.nix
-    ./modules/starship.nix
-    ./modules/alacritty.nix
-    ./modules/zsh.nix
-    ./modules/firefox/firefox.nix
-  ];
+    imports = [
+        ./modules/hyprland.nix
+        ./modules/git.nix
+        ./modules/starship.nix
+        ./modules/alacritty.nix
+        ./modules/zsh.nix
+        ./modules/firefox/firefox.nix
+    ];
 
 
-  home.username = "erf";
-  home.homeDirectory = "/home/erf";
+    home.username = "erf";
+    home.homeDirectory = "/home/erf";
 
 
-  home.sessionVariables = {
-     EDITOR = "nvim";
-     HYPRSHOT_DIR = "~/Media/Screenshots
-  };
+    home.sessionVariables = {
+        EDITOR = "nvim";
+    };
 
 
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 
 
-  home.stateVersion = "24.05";
+    home.stateVersion = "24.05";
 }

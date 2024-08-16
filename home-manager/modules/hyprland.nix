@@ -19,7 +19,7 @@
       ];
 
       general = {
-         gaps_in = 1;
+         gaps_in = 0;
          gaps_out = 0;
          border_size = 0;
          "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
@@ -135,14 +135,14 @@
         	"$mainMod, mouse_down, workspace, e+1"
         	"$mainMod, mouse_up, workspace, e-1"
 
-            "$mainMod, PRINT, exec, hyprshot -m window"
-            ", PRINT, exec, hyprshot -m output"
-            "$shiftMod, PRINT, exec, hyprshot -m region"
+            "$mainMod, PRINT, exec, hyprshot --output-folder /home/erf/Media/Screenshots -m window"
+            ", PRINT, exec, hyprshot --output-folder /home/erf/Media/Screenshots -m output"
+            "$mainMod SHIFT, PRINT, exec, hyprshot --output-folder /home/erf/Media/Screenshots -m region"
         ];
 
         bindm = [
-        	"$mainMod, mouse:272, movewindow"
-        	"$mainMod, mouse:273, resizewindow"
+            "$mainMod, mouse:272, movewindow"
+            "$mainMod, mouse:273, resizewindow"
         ];
 
         windowrulev2 = "suppressevent maximize, class:.*";
@@ -154,9 +154,9 @@
     enable = true;
 
     settings = {
-      preload = "~/Media/Wallpapers/nix.png";
+      preload = "~/Media/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
 
-      wallpaper = "HDMI-A-1,~/Media/Wallpapers/nix.png";
+      wallpaper = "HDMI-A-1,~/Media/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
 
       splash = true;
     };
