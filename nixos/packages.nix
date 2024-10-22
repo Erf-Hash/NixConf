@@ -5,8 +5,7 @@
         wget
         git
         python312
-        python312Packages.jupyter
-        (python311.withPackages (ps: with ps; [
+        (python312.withPackages (ps: with ps; [
             pip
             notebook
             numpy
@@ -24,6 +23,9 @@
         hyprshot
         rofi-wayland
         wl-clipboard
+
+        qjackctl
+        pulsemixer
 
         # Command-line utils
         fzf

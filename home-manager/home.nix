@@ -7,6 +7,7 @@
         ./modules/alacritty.nix
         ./modules/zsh.nix
         ./modules/firefox/firefox.nix
+        ./modules/vscode.nix
     ];
 
 
@@ -22,5 +23,9 @@
     programs.home-manager.enable = true;
 
 
+    nixpkgs.config.allowUnfree = true; 
+
+
     home.stateVersion = "24.05";
+
 }

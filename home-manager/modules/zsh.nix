@@ -11,6 +11,7 @@
       ls = "eza";
       cat = "bat";
       grep = "rg";
+      vim = "nvim";
     };
 
     history.size = 10000;

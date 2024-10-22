@@ -1,5 +1,5 @@
 { 
-    programs.alacritty = {
+   programs.alacritty = {
         enable = true;
     
         settings = {

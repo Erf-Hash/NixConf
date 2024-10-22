@@ -21,11 +21,12 @@
   time.timeZone = "Asia/Terhan";
 
 
-  i18n.defaultLocale = "en_US.UTF-8";
-    console = {
+  console = {
       font = "Lat2-Terminus16";
       useXkbConfig = true; # use xkb.options in tty.
     };
+
+    #services.xserver.xkb.layout = "us,fa";
 
 
   security.rtkit.enable = true;
@@ -56,6 +57,21 @@
   };
 
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "${username}";
+      };
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${pkgs.hyprland}/bin/Hyprland";
+        user = "greeter";
+      };
+    };
+  };
+
+
   hardware.graphics.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -70,5 +86,5 @@
   };
 
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # DO NOT CHANGE THIS
 }
