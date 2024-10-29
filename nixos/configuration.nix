@@ -26,7 +26,7 @@
       useXkbConfig = true; # use xkb.options in tty.
     };
 
-    #services.xserver.xkb.layout = "us,fa";
+    services.xserver.xkb.layout = "us,fa";
 
 
   security.rtkit.enable = true;

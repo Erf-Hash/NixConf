@@ -4,15 +4,10 @@
     # Development 
         wget
         git
+        gcc
         python312
         (python312.withPackages (ps: with ps; [
             pip
-            notebook
-            numpy
-            pandas
-            scikit-learn
-            seaborn
-            matplotlib
         ]))
 
         # Hyprland

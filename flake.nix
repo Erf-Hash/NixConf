@@ -1,10 +1,10 @@
 {
-  description = "Flake Configuration";
+  description = "Configuration Flake";
 
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,12 +20,12 @@
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       username = "erf";
 
     in {
@@ -40,7 +40,7 @@
 
         specialArgs = {
             inherit username; 
-            inherit pkgs-unstable;
+            inherit pkgs-stable;
         };
       };
 
@@ -51,7 +51,7 @@
 
         extraSpecialArgs = {
             inherit username;
-            inherit pkgs-unstable;
+            inherit pkgs-stable;
             firefox-addons = inputs.firefox-addons;
         };
       };
