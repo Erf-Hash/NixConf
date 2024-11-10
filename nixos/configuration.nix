@@ -1,44 +1,46 @@
 { config, lib, pkgs, pkgs-stable, username, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./packages.nix
-      ./modules/hyprland.nix
-      ./modules/nixvim/nixvim.nix
-      ./modules/stylix.nix
+    imports = [
+        ./hardware-configuration.nix
+        ./packages.nix
+        ./modules/hyprland.nix
+        ./modules/nixvim/nixvim.nix
+        ./modules/stylix.nix
+        ./modules/virtualization.nix
     ];
 
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 
 
-  networking.hostName = "nixos";
-  networking.nameservers = ["10.202.10.202" "8.8.8.8" "178.22.122.100" "1.1.1.1"];
+    networking.hostName = "nixos";
+    networking.nameservers = ["10.202.10.202" "8.8.8.8" "178.22.122.100" "1.1.1.1"];
 
 
-  time.timeZone = "Asia/Terhan";
+    time.timeZone = "Asia/Terhan";
 
 
-  console = {
-      font = "Lat2-Terminus16";
-      useXkbConfig = true; # use xkb.options in tty.
+    console = {
+         font = "Lat2-Terminus16";
+         useXkbConfig = true; # use xkb.options in tty.
     };
+
 
     services.xserver.xkb.layout = "us,fa";
 
 
-  security.rtkit.enable = true;
-  security.sudo.wheelNeedsPassword = false; 
+    security.rtkit.enable = true;
+    security.sudo.wheelNeedsPassword = false; 
 
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-  };
+
+    services.pipewire = {
+        enable = true;
+        pulse.enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        jack.enable = true;
+    };
 
 
   users.users.erf = {
