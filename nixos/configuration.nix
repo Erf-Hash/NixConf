@@ -27,7 +27,7 @@
     };
 
 
-    services.xserver.xkb.layout = "us,fa";
+    services.xserver.xkb.layout = "us";
 
 
     security.rtkit.enable = true;

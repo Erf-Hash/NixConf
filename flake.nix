@@ -1,6 +1,9 @@
 {
   description = "Configuration Flake";
 
+  nixConfig.trusted-substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+  ];
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -16,7 +19,6 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:danth/stylix";
-
   };
 
 

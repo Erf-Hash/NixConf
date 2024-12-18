@@ -8,7 +8,7 @@
     
 
     shellAliases = {
-      ls = "eza";
+      ls = "eza --icons";
       cat = "bat";
       grep = "rg";
       vim = "nvim";

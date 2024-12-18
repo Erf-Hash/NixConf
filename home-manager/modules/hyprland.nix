@@ -135,9 +135,9 @@
         	"$mainMod, mouse_down, workspace, e+1"
         	"$mainMod, mouse_up, workspace, e-1"
 
-            "$mainMod, PRINT, exec, hyprshot --output-folder /home/erf/Media/Screenshots -m window"
-            ", PRINT, exec, hyprshot --output-folder /home/erf/Media/Screenshots -m output"
-            "$mainMod SHIFT, PRINT, exec, hyprshot --output-folder /home/erf/Media/Screenshots -m region"
+            "$mainMod, PRINT, exec, hyprshot --output-folder /home/erf/Media/Pictures/Screenshots -m window"
+            ", PRINT, exec, hyprshot --output-folder /home/erf/Media/Pictures/Screenshots -m output"
+            "$mainMod SHIFT, PRINT, exec, hyprshot --output-folder /home/erf/Media/Pictures/Screenshots -m region"
         ];
 
         bindm = [

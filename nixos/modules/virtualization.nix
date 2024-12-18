@@ -1,4 +1,4 @@
-{ pkgs, config ... }:
+{ pkgs, config, ... }:
 {
     programs.dconf.enable = true;
 
@@ -12,7 +12,7 @@
         spice-protocol
         win-virtio
         win-spice
-        gnome.adawaita-icon-theme
+        adwaita-icon-theme
     ];
 
     virtualisation = {
