@@ -36,7 +36,6 @@
         fastfetch
         zip
         unzip
-        zoxide
         trash-cli
 
         # General apps
