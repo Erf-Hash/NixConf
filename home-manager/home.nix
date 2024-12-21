@@ -8,6 +8,8 @@
         ./modules/zsh.nix
         ./modules/firefox/firefox.nix
         ./modules/vscode.nix
+        ./modules/librewolf.nix
+        ./modules/zoxide.nix
     ];
 
 
