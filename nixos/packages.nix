@@ -2,10 +2,9 @@
 
     environment.systemPackages = with pkgs; [
     # Development 
-        wget
         git
         gcc
-        python312
+        python313Full
         (python312.withPackages (ps: with ps; [
             pip
         ]))
@@ -18,7 +17,7 @@
         hyprshot
         rofi-wayland
         wl-clipboard
-
+        
         qjackctl
         pulsemixer
 

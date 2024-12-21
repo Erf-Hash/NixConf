@@ -154,9 +154,9 @@
     enable = true;
 
     settings = {
-      preload = "~/Media/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
+      preload = "~/Media/Pictures/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
 
-      wallpaper = "HDMI-A-1,~/Media/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
+      wallpaper = "HDMI-A-1,~/Media/Pictures/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
 
       splash = true;
     };

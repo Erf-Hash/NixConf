@@ -15,7 +15,10 @@
 
 
     networking.hostName = "nixos";
-    networking.nameservers = ["10.202.10.202" "8.8.8.8" "178.22.122.100" "1.1.1.1"];
+    networking.nameservers = [ "10.202.10.202" "8.8.8.8" ];
+    networking.dhcpcd.extraConfig = ''
+        nohook resolv.conf
+    '';
 
 
     time.timeZone = "Asia/Terhan";
@@ -27,8 +30,9 @@
     };
 
 
-    services.xserver.xkb.layout = "us";
-
+    services.xserver = {
+        xkb.layout = "us";
+    };
 
     security.rtkit.enable = true;
     security.sudo.wheelNeedsPassword = false; 
