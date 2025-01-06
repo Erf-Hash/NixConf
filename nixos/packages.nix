@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
     environment.systemPackages = with pkgs; [
-    # Development 
+    # Development
         git
         gcc
         python313Full
@@ -17,7 +17,7 @@
         hyprshot
         rofi-wayland
         wl-clipboard
-        
+
         qjackctl
         pulsemixer
 
@@ -39,17 +39,20 @@
 
         # General apps
         alacritty
+        hiddify-app
         zathura
         imv
-        mpv    
+        mpv
         brave
         firefox
+        telegram-desktop
         jmtpfs
+
     ];
 
 
     fonts.packages = with pkgs; [
-        nerdfonts
+        #    nerdfonts
         jetbrains-mono
         ir-standard-fonts
     ];

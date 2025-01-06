@@ -8,6 +8,7 @@
 
       "$browser" = "firefox";
       "$terminal" = "alacritty";
+      "$telegram" = "telegram-desktop";
 
       exec-once = [
         "hyprpaper"
@@ -34,10 +35,6 @@
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
             enabled = true;
@@ -101,6 +98,7 @@
         	"$mainMod, P, pseudo,"
         	"$mainMod, S, togglesplit,"
         	"$mainMod, B, exec, $browser"
+            "$mainMod, T, exec, $telegram"
 
         	"$mainMod, H, movefocus, l"
         	"$mainMod, L, movefocus, r"

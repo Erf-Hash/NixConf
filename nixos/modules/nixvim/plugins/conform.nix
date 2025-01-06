@@ -1,14 +1,14 @@
 {
     programs.nixvim.plugins.conform-nvim = {
         enable = true;
-        notifyOnError = true;
-        
-        formatOnSave = {
+        settings.notify_on_error = true;
+
+        settings.format_on_save = {
             lspFallback = true;
             timeoutMs = 500;
         };
 
-        formattersByFt = {
+        settings.formatters_by_ft = {
             html = [ "prettierd" ];
             css = [ "prettierd" ];
             javascript = [ "prettierd" ];
