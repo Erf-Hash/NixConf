@@ -52,7 +52,7 @@
 
 
     fonts.packages = with pkgs; [
-        #    nerdfonts
+        nerd-fonts._0xproto
         jetbrains-mono
         ir-standard-fonts
     ];
