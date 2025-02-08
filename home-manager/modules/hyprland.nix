@@ -9,6 +9,7 @@
       "$browser" = "firefox";
       "$terminal" = "alacritty";
       "$telegram" = "telegram-desktop";
+      "$vscode" = "code";
 
       exec-once = [
         "hyprpaper"
@@ -67,7 +68,7 @@
 
         misc = { 
             force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
-            disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
+            disable_hyprland_logo = false; # If true disables the random hyprland logo / anime girl background. :(
         };
 
         input = {
@@ -93,12 +94,13 @@
             "$mainMod, C, killactive,"
             "$mainMod, M, exit,"
         	"$mainMod, E, exec, $fileManager"
-        	"$mainMod, V, togglefloating,"
+        	"$mainMod, F, togglefloating,"
         	"$mainMod, O, exec, $menu"
         	"$mainMod, P, pseudo,"
         	"$mainMod, S, togglesplit,"
         	"$mainMod, B, exec, $browser"
             "$mainMod, T, exec, $telegram"
+            "$mainMod, V, exec, $vscode"
 
         	"$mainMod, H, movefocus, l"
         	"$mainMod, L, movefocus, r"
