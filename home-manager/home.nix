@@ -5,7 +5,8 @@
         ./modules/git.nix
         ./modules/starship.nix
         ./modules/alacritty.nix
-        ./modules/zsh.nix
+        ./modules/nushell.nix
+        ./modules/carapace.nix
         ./modules/firefox/firefox.nix
         ./modules/vscode.nix
         ./modules/zoxide.nix

@@ -30,12 +30,13 @@
         ripgrep
         file
         tldr
-        zsh
         starship
         fastfetch
         zip
         unzip
         trash-cli
+        proxychains
+        dust
 
         # General apps
         alacritty

@@ -15,7 +15,7 @@
 
 
     networking.hostName = "nixos";
-    networking.nameservers = [ "10.202.10.202" "8.8.8.8" ];
+    networking.nameservers = [ "185.51.200.2" "8.8.8.8" ];
     networking.dhcpcd.extraConfig = ''
         nohook resolv.conf
     '';
@@ -49,17 +49,15 @@
 
   users.users.erf = {
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
   services.getty.autologinUser = "erf";
 
 
-  programs.zsh.enable = true;
-
-
   environment.variables = {
     EDITOR = "nvim";
+    SHELL = "nu";
   };
 
 

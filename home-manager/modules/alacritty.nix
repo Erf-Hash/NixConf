@@ -18,6 +18,8 @@
                 shape = "Beam";
                 blinking = "On";
             };
+
+            terminal.shell = "nu";
         };
     };
 }
