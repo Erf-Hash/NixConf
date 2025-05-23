@@ -17,6 +17,14 @@
     home.homeDirectory = "/home/erf";
 
 
+    xdg.mimeApps = {
+            enable = true;
+            defaultApplications = {
+                "application/pdf" = "org.pwmt.zathura.desktop";
+            };
+    };
+
+
     home.sessionVariables = {
         EDITOR = "nvim";
     };

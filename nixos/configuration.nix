@@ -4,7 +4,8 @@
         ./hardware-configuration.nix
         ./packages.nix
         ./modules/hyprland.nix
-        ./modules/nixvim/nixvim.nix
+        #        ./modules/nixvim/nixvim.nix
+        ./modules/nvf.nix
         ./modules/stylix.nix
         ./modules/virtualization.nix
     ];
@@ -14,12 +15,11 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
 
-    networking.hostName = "nixos";
-    networking.nameservers = [ "185.51.200.2" "8.8.8.8" ];
-    networking.dhcpcd.extraConfig = ''
-        nohook resolv.conf
-    '';
-
+    networking = {
+      hostName = "nixos";
+      nameservers = [ "185.51.200.2" "8.8.8.8" ];
+      networkmanager.dns = "none";
+    };
 
     time.timeZone = "Asia/Terhan";
 
@@ -35,7 +35,7 @@
     };
 
     security.rtkit.enable = true;
-    security.sudo.wheelNeedsPassword = false; 
+    security.sudo.wheelNeedsPassword = false;
 
 
     services.pipewire = {
@@ -61,7 +61,7 @@
   };
 
 
-  services.greetd = {
+  services.greetd = { # PURGE THIS SHIT ASAP
     enable = true;
     settings = {
       initial_session = {

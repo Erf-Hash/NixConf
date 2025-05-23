@@ -3,10 +3,11 @@
     environment.systemPackages = with pkgs; [
     # Development
         git
+        sqlite
         gcc
-        python313Full
-        (python312.withPackages (ps: with ps; [
-            pip
+        python313
+        uv
+        (python313.withPackages (ps: with ps; [
         ]))
 
         # Hyprland
@@ -18,6 +19,7 @@
         rofi-wayland
         wl-clipboard
 
+        # Sound
         qjackctl
         pulsemixer
 
@@ -36,7 +38,7 @@
         unzip
         trash-cli
         proxychains
-        dust
+        traceroute
 
         # General apps
         alacritty
@@ -47,7 +49,7 @@
         brave
         firefox
         telegram-desktop
-        jmtpfs
+        android-file-transfer
 
     ];
 

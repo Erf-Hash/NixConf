@@ -6,14 +6,10 @@
 
 
     shellAliases = {
-        cp = "cp -i";
-        mv = "mv -i";
-        rm = "trash -iv";
-        ls = "eza --icons";
         cat = "bat";
-        grep = "rg";
+            # grep = "rg";
         vi = "nvim";
-        du = "dust";
+        top = "btop";
     };
 
 #    history.size = 10000;

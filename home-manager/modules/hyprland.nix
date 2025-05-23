@@ -10,6 +10,7 @@
       "$terminal" = "alacritty";
       "$telegram" = "telegram-desktop";
       "$vscode" = "code";
+      "$menu" = "rofi -show drun";
 
       exec-once = [
         "hyprpaper"
@@ -93,7 +94,6 @@
             "$mainMod, Q, exec, $terminal"
             "$mainMod, C, killactive,"
             "$mainMod, M, exit,"
-        	"$mainMod, E, exec, $fileManager"
         	"$mainMod, F, togglefloating,"
         	"$mainMod, O, exec, $menu"
         	"$mainMod, P, pseudo,"

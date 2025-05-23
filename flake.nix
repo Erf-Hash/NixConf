@@ -15,14 +15,16 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+        #    nixvim.url = "github:nix-community/nixvim";
+        #  nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    nvf.url = "github:notashelf/nvf";
 
     stylix.url = "github:danth/stylix";
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nvf, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -36,7 +38,8 @@
 
         modules = [
             ./nixos/configuration.nix
-            inputs.nixvim.nixosModules.nixvim
+                    #    inputs.nixvim.nixosModules.nixvim
+            inputs.nvf.nixosModules.default
             inputs.stylix.nixosModules.stylix
         ];
 
