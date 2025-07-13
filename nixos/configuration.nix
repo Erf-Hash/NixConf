@@ -17,7 +17,7 @@
 
     networking = {
       hostName = "nixos";
-      nameservers = [ "185.51.200.2" "8.8.8.8" ];
+      nameservers = [ "8.8.8.8" ];
       networkmanager.dns = "none";
     };
 

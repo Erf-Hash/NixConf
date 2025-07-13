@@ -7,6 +7,8 @@
         gcc
         python313
         uv
+        go
+        rustc
         (python313.withPackages (ps: with ps; [
         ]))
 
@@ -14,7 +16,6 @@
         waybar
         mako
         libnotify
-        hyprpaper
         hyprshot
         rofi-wayland
         wl-clipboard
@@ -26,19 +27,17 @@
         # Command-line utils
         fzf
         bat
-        eza
         btop
         tmux
-        ripgrep
         file
         tldr
         starship
         fastfetch
         zip
         unzip
-        trash-cli
         proxychains
         traceroute
+        progress
 
         # General apps
         alacritty
