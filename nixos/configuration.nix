@@ -21,6 +21,7 @@
       networkmanager.dns = "none";
     };
 
+
     time.timeZone = "Asia/Terhan";
 
 
@@ -33,9 +34,6 @@
     services.xserver = {
         xkb.layout = "us";
     };
-
-    security.rtkit.enable = true;
-    security.sudo.wheelNeedsPassword = false;
 
 
     services.pipewire = {
@@ -88,6 +86,10 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
+
+
+  security.rtkit.enable = true;
+  security.sudo.wheelNeedsPassword = false;
 
 
   system.stateVersion = "24.05"; # DO NOT CHANGE THIS

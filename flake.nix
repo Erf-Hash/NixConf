@@ -19,6 +19,7 @@
         #  nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     nvf.url = "github:notashelf/nvf";
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:danth/stylix";
   };

@@ -7,8 +7,7 @@
         gcc
         python313
         uv
-        go
-        rustc
+        rustup # Impure piece of shit
         (python313.withPackages (ps: with ps; [
         ]))
 
@@ -38,6 +37,7 @@
         proxychains
         traceroute
         progress
+        pandoc
 
         # General apps
         alacritty
@@ -49,7 +49,7 @@
         firefox
         telegram-desktop
         android-file-transfer
-
+        localsend
     ];
 
 
