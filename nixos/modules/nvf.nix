@@ -3,17 +3,22 @@
   programs.nvf = {
     enable = true;
     
-    #statusline.lualine.enable = true;
-    #telescope.enable = true;
-    #autocomplete.nvim-cmp.enable = true;
+    settings.vim = {
+      theme.enable = true;
+      theme.name = "catppuccin";
+      theme.style = "mocha";
 
-    # vim.languages = {
-    #   enableLSP = true;
-    #   enableTreesitter = true;
-
-    #   nix.enable = true;
-    #   python.enable = true;
-    #   sql.enable = true;
-    # };
+      statusline.lualine.enable = true;
+      telescope.enable = true;
+      autocomplete.nvim-cmp.enable = true;
+      
+      languages = {
+        enableLSP = true;
+        enableTreesitter = true;
+        python.enable = true;
+        nix.enable = true;
+        rust.enable = true;
+      };
+    };
   };
 }
