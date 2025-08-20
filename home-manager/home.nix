@@ -16,7 +16,6 @@
     home.username = "erf";
     home.homeDirectory = "/home/erf";
 
-
     xdg.mimeApps = {
             enable = true;
             defaultApplications = {

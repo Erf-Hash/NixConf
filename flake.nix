@@ -15,9 +15,6 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
 
-        #    nixvim.url = "github:nix-community/nixvim";
-        #  nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
     nvf.url = "github:notashelf/nvf";
 
     stylix.url = "github:danth/stylix";
@@ -38,9 +35,21 @@
 
         modules = [
             ./nixos/configuration.nix
-                    #    inputs.nixvim.nixosModules.nixvim
             inputs.nvf.nixosModules.default
             inputs.stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+                home-manager.backupFileExtension = "backup";
+              home-manager.users.erf = ./home-manager/home.nix;
+              home-manager.extraSpecialArgs = {
+                        inherit username;
+                        inherit pkgs-stable;
+                        firefox-addons = inputs.firefox-addons;
+                };
+                                
+          }
         ];
 
         specialArgs = {
@@ -49,16 +58,16 @@
         };
       };
 
-      homeConfigurations.erf = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+                        # homeConfigurations.erf = home-manager.lib.homeManagerConfiguration {
+                        #  inherit pkgs;
 
-        modules = [ ./home-manager/home.nix ];
+                        #     modules = [ ./home-manager/home.nix ];
 
-        extraSpecialArgs = {
-            inherit username;
-            inherit pkgs-stable;
-            firefox-addons = inputs.firefox-addons;
-        };
-      };
+                        # extraSpecialArgs = {
+                        #    inherit username;
+                        #    inherit pkgs-stable;
+                        #       firefox-addons = inputs.firefox-addons;
+                        #      };
+                        #    };
     };
 }

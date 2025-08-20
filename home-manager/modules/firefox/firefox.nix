@@ -3,7 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    profiles.erf = {
+    profiles.default = {
 
       search.engines = {
         "Nix Packages" = {
@@ -20,6 +20,7 @@
         };
       };
       search.force = true;
+      search.default = "DuckDuckGo";
       search.privateDefault = "DuckDuckGo";
 
       bookmarks = [
@@ -44,6 +45,7 @@
       extensions = with firefox-addons.packages."x86_64-linux"; [
         bitwarden
         ublock-origin
+        vimium
       ];
     };
   };
