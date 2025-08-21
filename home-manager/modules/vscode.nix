@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
 
@@ -21,7 +22,9 @@
       "window.menuBarVisibility" = "hidden";
       "files.autoSave" = "afterDelay";
       "files.autoSaveDelay" = 100;
-      "[python]" = { "editor.defaultFormatter" = "ms-python.black-formatter"; };
+      "[python]" = {
+        "editor.defaultFormatter" = "ms-python.black-formatter";
+      };
       "editor.codeActionsOnSave" = {
         "source.fixAll" = true;
         "source.organizeImports" = true;

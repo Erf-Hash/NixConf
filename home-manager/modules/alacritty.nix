@@ -3,7 +3,9 @@
     enable = true;
 
     settings = {
-      window = { blur = true; };
+      window = {
+        blur = true;
+      };
 
       cursor.style = {
         shape = "Beam";

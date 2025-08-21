@@ -14,7 +14,10 @@
 
       exec-once = [ "hyprpaper" ];
 
-      env = [ "XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" ];
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
 
       general = {
         gaps_in = 0;
@@ -51,27 +54,30 @@
       };
 
       dwindle = {
-        pseudotile =
-          true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # You probably want this
       };
 
-      master = { new_status = "master"; };
+      master = {
+        new_status = "master";
+      };
 
       misc = {
-        force_default_wallpaper =
-          1; # Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo =
-          true; # If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 1; # Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
       };
 
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
-        touchpad = { natural_scroll = false; };
+        touchpad = {
+          natural_scroll = false;
+        };
       };
-      gestures = { workspace_swipe = false; };
+      gestures = {
+        workspace_swipe = false;
+      };
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
@@ -141,7 +147,9 @@
   services.hyprpaper = {
     enable = true;
 
-    settings = { splash = false; };
+    settings = {
+      splash = false;
+    };
   };
 
 }
