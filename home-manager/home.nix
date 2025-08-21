@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./modules/hyprland.nix
     ./modules/git.nix
@@ -24,7 +25,9 @@
     };
   };
 
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
   programs.home-manager.enable = true;
 

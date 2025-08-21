@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
@@ -25,7 +26,9 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  services.xserver = { xkb.layout = "us"; };
+  services.xserver = {
+    xkb.layout = "us";
+  };
 
   services.pipewire = {
     enable = true;
@@ -47,7 +50,8 @@
     SHELL = "nu";
   };
 
-  services.greetd = { # PURGE THIS SHIT ASAP
+  services.greetd = {
+    # PURGE THIS SHIT ASAP
     enable = true;
     settings = {
       initial_session = {
@@ -55,8 +59,7 @@
         user = "${username}";
       };
       default_session = {
-        command =
-          "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${pkgs.hyprland}/bin/Hyprland";
         user = "greeter";
       };
     };
@@ -66,7 +69,10 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
     automatic = true;

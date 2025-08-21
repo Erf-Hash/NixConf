@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   environment.systemPackages = with pkgs; [
     # Development
@@ -38,7 +39,7 @@
     progress
     pandoc
     nixd
-    nixfmt
+    nixfmt-rfc-style
 
     # General apps
     alacritty

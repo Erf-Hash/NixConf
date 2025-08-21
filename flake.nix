@@ -1,8 +1,7 @@
 {
   description = "Configuration Flake";
 
-  nixConfig.trusted-substituters =
-    [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nixConfig.trusted-substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -19,7 +18,15 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nvf, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      home-manager,
+      nvf,
+      ...
+    }@inputs:
 
     let
       system = "x86_64-linux";
@@ -27,7 +34,8 @@
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       username = "erf";
 
-    in {
+    in
+    {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
 
@@ -55,17 +63,5 @@
           inherit pkgs-stable;
         };
       };
-
-      # homeConfigurations.erf = home-manager.lib.homeManagerConfiguration {
-      #  inherit pkgs;
-
-      #     modules = [ ./home-manager/home.nix ];
-
-      # extraSpecialArgs = {
-      #    inherit username;
-      #    inherit pkgs-stable;
-      #       firefox-addons = inputs.firefox-addons;
-      #      };
-      #    };
     };
 }
