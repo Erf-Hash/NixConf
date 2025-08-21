@@ -1,9 +1,8 @@
 {
   description = "Configuration Flake";
 
-  nixConfig.trusted-substituters = [
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-  ];
+  nixConfig.trusted-substituters =
+    [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -20,7 +19,6 @@
     stylix.url = "github:danth/stylix";
   };
 
-
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nvf, ... }@inputs:
 
     let
@@ -34,40 +32,40 @@
         inherit system;
 
         modules = [
-            ./nixos/configuration.nix
-            inputs.nvf.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-                home-manager.backupFileExtension = "backup";
-              home-manager.users.erf = ./home-manager/home.nix;
-              home-manager.extraSpecialArgs = {
-                        inherit username;
-                        inherit pkgs-stable;
-                        firefox-addons = inputs.firefox-addons;
-                };
-                                
+          ./nixos/configuration.nix
+          inputs.nvf.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.erf = ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit username;
+              inherit pkgs-stable;
+              firefox-addons = inputs.firefox-addons;
+            };
+
           }
         ];
 
         specialArgs = {
-            inherit username; 
-            inherit pkgs-stable;
+          inherit username;
+          inherit pkgs-stable;
         };
       };
 
-                        # homeConfigurations.erf = home-manager.lib.homeManagerConfiguration {
-                        #  inherit pkgs;
+      # homeConfigurations.erf = home-manager.lib.homeManagerConfiguration {
+      #  inherit pkgs;
 
-                        #     modules = [ ./home-manager/home.nix ];
+      #     modules = [ ./home-manager/home.nix ];
 
-                        # extraSpecialArgs = {
-                        #    inherit username;
-                        #    inherit pkgs-stable;
-                        #       firefox-addons = inputs.firefox-addons;
-                        #      };
-                        #    };
+      # extraSpecialArgs = {
+      #    inherit username;
+      #    inherit pkgs-stable;
+      #       firefox-addons = inputs.firefox-addons;
+      #      };
+      #    };
     };
 }

@@ -1,18 +1,16 @@
-{ 
-   programs.alacritty = {
-        enable = true;
-    
-        settings = {
-            window = {
-                blur = true;
-            };
-    
-            cursor.style = {
-                shape = "Beam";
-                blinking = "On";
-            };
+{
+  programs.alacritty = {
+    enable = true;
 
-            terminal.shell = "nu";
-        };
+    settings = {
+      window = { blur = true; };
+
+      cursor.style = {
+        shape = "Beam";
+        blinking = "On";
+      };
+
+      terminal.shell = "nu";
     };
+  };
 }
