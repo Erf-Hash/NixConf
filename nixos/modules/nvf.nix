@@ -8,8 +8,7 @@
       theme.name = "catppuccin";
       theme.style = "mocha";
 
-      clipboard.registers = "unnamedplus";
-      clipboard.providers.wl-copy.enable = true;
+      clipboard.enable = true;
 
       statusline.lualine.enable = true;
       telescope.enable = true;

@@ -1,5 +1,5 @@
 {
-  wayland.windowManager.hyprland = {
+wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
@@ -25,8 +25,6 @@
          gaps_in = 0;
          gaps_out = 0;
          border_size = 0;
-         "col.active_border" = "rgb(89b4fa)";
-         "col.inactive_border" = "rgb(45475a)";
          resize_on_border = false;
          allow_tearing = false;
          layout = "dwindle";
@@ -154,10 +152,6 @@
     enable = true;
 
     settings = {
-      preload = "~/Media/Pictures/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
-
-      wallpaper = "HDMI-A-1,~/Media/Pictures/Wallpapers/neonoverdrive-vaporwave-off-kanagawa.jpg";
-
       splash = false;
     };
   };
