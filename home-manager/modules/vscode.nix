@@ -31,6 +31,9 @@
                 "source.fixAll" = true;
                 "source.organizeImports" = true;
             };
+
+            "nix.enableLanguageServer" = "true";
+            "nix.serverPath" = "nixd";
         };
     };
 }

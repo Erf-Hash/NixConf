@@ -38,6 +38,8 @@
         traceroute
         progress
         pandoc
+        nixd
+        nixfmt
 
         # General apps
         alacritty
@@ -54,8 +56,6 @@
 
 
     fonts.packages = with pkgs; [
-        nerd-fonts._0xproto
-        jetbrains-mono
         ir-standard-fonts
     ];
 }
