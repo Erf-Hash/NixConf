@@ -8,12 +8,15 @@
       theme.name = "catppuccin";
       theme.style = "mocha";
 
+      clipboard.registers = "unnamedplus";
+      clipboard.providers.wl-copy.enable = true;
+
       statusline.lualine.enable = true;
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
       
+      lsp.enable = true;
       languages = {
-        enableLSP = true;
         enableTreesitter = true;
         python.enable = true;
         nix.enable = true;
