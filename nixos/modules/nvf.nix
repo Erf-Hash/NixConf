@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.nvf = {
     enable = true;
@@ -8,7 +8,20 @@
       theme.name = "catppuccin";
       theme.style = "mocha";
 
+      lazy.plugins = {
+        "aerial.nvim" = {
+          package = pkgs.vimPlugins.aerial-nvim;
+
+          setupModule = "aerial";
+          setupOpts = {
+            option_name = false;
+          };
+        };
+      };
+
       clipboard.enable = true;
+      clipboard.providers.wl-copy.enable = true;
+      clipboard.registers = "unnamedplus";
 
       statusline.lualine.enable = true;
       telescope.enable = true;
