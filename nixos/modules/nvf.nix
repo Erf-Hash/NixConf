@@ -31,6 +31,7 @@
       languages = {
         enableTreesitter = true;
         python.enable = true;
+        python.format.enable = true;
         nix.enable = true;
         rust.enable = true;
       };

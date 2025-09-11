@@ -19,6 +19,12 @@
     networkmanager.dns = "none";
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [ 53 53317 ];
+    allowedTCPPorts = [ 22 80 443 53317 ];
+  };
+
   time.timeZone = "Asia/Terhan";
 
   console = {

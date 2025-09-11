@@ -38,6 +38,7 @@
     traceroute
     progress
     pandoc
+    ffmpeg
     nixd
     nixfmt-rfc-style
 

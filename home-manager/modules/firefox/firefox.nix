@@ -42,9 +42,16 @@
       settings = {
         "dom.security.https_only_mode" = true;
         "browser.download.panel.shown" = true;
+        "browser.startup.page" = 0; # 0 means blank start page
+        "browser.contentblocking.category" = "strict";
         "identity.fxaccounts.enabled" = false;
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # This is for enabling custom CSS
         "signon.rememberSignons" = false;
+        "privacy.clearOnShutdown.cache" = true;
+        "privacy.clearOnShutdown.cookies" = true;
+        "privacy.clearOnShutdown.downloads" = true;
+        "privacy.clearOnShutdown.formdata" = true;
+        "privacy.resistFingerprinting" = true;
       };
 
       userChrome = (builtins.readFile ./userChrome.css);
