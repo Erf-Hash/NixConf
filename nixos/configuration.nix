@@ -8,6 +8,7 @@
     ./modules/nvf.nix
     ./modules/stylix.nix
     ./modules/virtualization.nix
+    ./modules/wireshark.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

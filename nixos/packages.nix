@@ -9,6 +9,7 @@
     python313
     uv
     rustup # Impure piece of shit
+    typst
     (python313.withPackages (ps: with ps; [ ]))
 
     # Hyprland
@@ -53,6 +54,8 @@
     telegram-desktop
     android-file-transfer
     localsend
+    # gephi
+    # musescore
   ];
 
   fonts.packages = with pkgs; [ ir-standard-fonts ];
