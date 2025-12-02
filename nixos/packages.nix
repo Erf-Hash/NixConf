@@ -3,14 +3,22 @@
 
   environment.systemPackages = with pkgs; [
     # Development
+    distrobox # PURGE
     git
     sqlite
     gcc
-    python313
+    gnumake # These two can be redundant
     uv
     rustup # Impure piece of shit
+    mininet # For Research purposes only
     typst
-    (python313.withPackages (ps: with ps; [ ]))
+    python313
+    jupyter
+   (python3.withPackages (ps: with ps; [ ]))
+
+    #lisp test
+    racket
+    hyu
 
     # Hyprland
     waybar
@@ -37,11 +45,12 @@
     unzip
     proxychains
     traceroute
-    progress
-    pandoc
     ffmpeg
     nixd
     nixfmt-rfc-style
+    hyperfine
+    proxychains
+    zellij
 
     # General apps
     alacritty
@@ -54,8 +63,12 @@
     telegram-desktop
     android-file-transfer
     localsend
-    # gephi
+    wireshark
     # musescore
+    
+
+   # Gaming
+   pcsx2
   ];
 
   fonts.packages = with pkgs; [ ir-standard-fonts ];

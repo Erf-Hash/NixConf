@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs.dconf.enable = true;
 
-  users.users.erf.extraGroups = [ "libvirtd" ];
+  users.users.${username}.extraGroups = [ "libvirtd" ];
 
   environment.systemPackages = with pkgs; [
     virt-manager
@@ -16,6 +16,7 @@
   ];
 
   virtualisation = {
+    vswitch.enable = true; # PURGE
     libvirtd = {
       enable = true;
       qemu = {
@@ -25,6 +26,11 @@
       };
     };
     spiceUSBRedirection.enable = true;
+    
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
 
   services.spice-vdagentd.enable = true;

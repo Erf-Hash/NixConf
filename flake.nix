@@ -1,7 +1,11 @@
 {
   description = "Configuration Flake";
 
-  nixConfig.trusted-substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nixConfig.substituters = [ 
+                #"https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+                #"https://mirror.sjtu.edu.cn/nix-channels/store"
+                "https://mirrors.ustc.edu.cn/nix-channels/store"
+                ];
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";

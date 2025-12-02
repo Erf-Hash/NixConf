@@ -6,6 +6,8 @@
     extensions = with pkgs.vscode-extensions; [
       vscodevim.vim
       yzhang.markdown-all-in-one
+      ms-vscode.cpptools-extension-pack
+      ms-vscode.cpptools
       ms-python.python
       ms-python.black-formatter
       ms-toolsai.jupyter

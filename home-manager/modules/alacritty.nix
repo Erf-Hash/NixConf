@@ -12,7 +12,8 @@
         blinking = "On";
       };
 
-      terminal.shell = "nu";
+      terminal.shell.program = "zellij";
+      terminal.shell.args = [ "-l" "welcome" ];
     };
   };
 }
