@@ -18,14 +18,14 @@
 
     #lisp test
     racket
-    hyu
+    hy
 
     # Hyprland
     waybar
     mako
     libnotify
     hyprshot
-    rofi-wayland
+    rofi
     wl-clipboard
 
     # Sound
@@ -54,7 +54,7 @@
 
     # General apps
     alacritty
-    hiddify-app
+    # hiddify-app
     zathura
     imv
     mpv

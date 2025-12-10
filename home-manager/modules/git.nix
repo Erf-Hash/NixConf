@@ -1,9 +1,9 @@
 {
   programs.git = {
     enable = true;
-    userName = "erf";
-    userEmail = "erf-hash@proton.me";
-    extraConfig = {
+    settings = {
+      user.name = "erf";
+      user.email = "erf-hash@proton.me";
       init.defaultBranch = "main";
     };
   };

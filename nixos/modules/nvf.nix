@@ -4,9 +4,9 @@
     enable = true;
 
     settings.vim = {
-      theme.enable = true;
-      theme.name = "catppuccin";
-      theme.style = "mocha";
+      # theme.enable = true;
+      # theme.name = "catppuccin";
+      # theme.style = "mocha";
 
       lazy.plugins = {
         "aerial.nvim" = {

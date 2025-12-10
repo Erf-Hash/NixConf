@@ -26,18 +26,6 @@
           definedAliases = [ "@nix" ];
         };
       };
-      search.force = true;
-      search.default = "DuckDuckGo";
-      search.privateDefault = "DuckDuckGo";
-
-      bookmarks = [
-        {
-          name = "wikipedia";
-          tags = [ "wiki" ];
-          keyword = "wiki";
-          url = "https://en.wikipedia.org/wiki/Special:Search?search=%s&go=Go";
-        }
-      ];
 
       settings = {
         "dom.security.https_only_mode" = true;
@@ -56,11 +44,11 @@
 
       userChrome = (builtins.readFile ./userChrome.css);
 
-      extensions = with firefox-addons.packages."x86_64-linux"; [
-        bitwarden
-        ublock-origin
-        vimium
-      ];
+       extensions = with firefox-addons.packages."x86_64-linux"; [
+         bitwarden
+         ublock-origin
+         vimium
+       ];
     };
   };
 }

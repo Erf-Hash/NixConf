@@ -2,14 +2,15 @@
   description = "Configuration Flake";
 
   nixConfig.substituters = [ 
+                "https://cache.nixos.org"
                 #"https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
                 #"https://mirror.sjtu.edu.cn/nix-channels/store"
-                "https://mirrors.ustc.edu.cn/nix-channels/store"
+                #"https://mirrors.ustc.edu.cn/nix-channels/store"
                 ];
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";

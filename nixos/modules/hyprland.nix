@@ -4,7 +4,7 @@
     enable = true;
     xwayland.enable = true;
     package = pkgs.hyprland.override {
-      legacyRenderer = true;
+      #legacyRenderer = true;
       enableXWayland = true;
     };
   };
