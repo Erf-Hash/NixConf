@@ -25,7 +25,7 @@
     };
     spiceUSBRedirection.enable = true;
     
-    podman = {
+    podman = { # PURGE ASAP
       enable = true;
       dockerCompat = true;
     };

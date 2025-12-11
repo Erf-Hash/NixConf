@@ -1,5 +1,7 @@
-{ pkgs, firefox-addons, ... }:
+{ pkgs, firefox-addons, system, ... }:
+
 {
+  stylix.targets.firefox.profileNames = [ "default" ]; # PURGE
   programs.firefox = {
     enable = true;
     profiles.default = {
@@ -44,11 +46,11 @@
 
       userChrome = (builtins.readFile ./userChrome.css);
 
-       extensions = with firefox-addons.packages."x86_64-linux"; [
-         bitwarden
-         ublock-origin
-         vimium
-       ];
+      extensions.packages = with firefox-addons.packages.${system}; [
+        bitwarden
+        ublock-origin
+        vimium
+      ];
     };
   };
 }

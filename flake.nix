@@ -29,7 +29,6 @@
       nixpkgs,
       nixpkgs-stable,
       home-manager,
-      nvf,
       ...
     }@inputs:
 
@@ -55,8 +54,9 @@
             home-manager.backupFileExtension = "backup";
             home-manager.users.erf = ./home-manager/home.nix;
             home-manager.extraSpecialArgs = {
-              inherit username;
+              inherit system;
               inherit pkgs-stable;
+              inherit username;
               firefox-addons = inputs.firefox-addons;
             };
 
@@ -64,8 +64,9 @@
         ];
 
         specialArgs = {
-          inherit username;
+          inherit system;
           inherit pkgs-stable;
+          inherit username;
         };
       };
     };
