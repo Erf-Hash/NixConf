@@ -9,14 +9,17 @@
                 ];
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
+    # firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    # firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+    nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
 
     nvf.url = "github:notashelf/nvf";
 
@@ -27,7 +30,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
+      nixpkgs-unstable,
       home-manager,
       ...
     }@inputs:
@@ -35,7 +38,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       username = "erf";
 
     in
@@ -55,9 +58,9 @@
             home-manager.users.erf = ./home-manager/home.nix;
             home-manager.extraSpecialArgs = {
               inherit system;
-              inherit pkgs-stable;
+              inherit pkgs-unstable;
               inherit username;
-              firefox-addons = inputs.firefox-addons;
+              # firefox-addons = inputs.firefox-addons;
             };
 
           }
@@ -65,7 +68,7 @@
 
         specialArgs = {
           inherit system;
-          inherit pkgs-stable;
+          inherit pkgs-unstable;
           inherit username;
         };
       };

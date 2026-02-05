@@ -1,11 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
 
   environment.systemPackages = with pkgs; [
     # Development
-    distrobox # PURGE
     git
     sqlite
+    nixd
+    nixfmt-rfc-style
     gcc
     gnumake # These two can be redundant
     uv
@@ -15,10 +16,6 @@
     python313
     jupyter
    (python3.withPackages (ps: with ps; [ ]))
-
-    #lisp test
-    racket
-    hy
 
     # Hyprland
     waybar
@@ -32,6 +29,10 @@
     qjackctl
     pulsemixer
 
+    (emacsWithDoom {
+      doomDir = inputs.doom-config;  # must be an absolute path here
+      doomLocalDir = "/home/erf/.local/share/nix-doom";
+    })
     # Command-line utils
     fzf
     bat
@@ -46,8 +47,6 @@
     proxychains
     traceroute
     ffmpeg
-    nixd
-    nixfmt-rfc-style
     hyperfine
     proxychains
     zellij
@@ -58,15 +57,14 @@
     zathura
     imv
     mpv
-    brave
     firefox
-    telegram-desktop
+    brave # PURGE
+    telegram-desktop # USE WEB VERSION
     android-file-transfer
     localsend
     wireshark
     # musescore
     
-
    # Gaming
    pcsx2
   ];

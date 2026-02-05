@@ -24,11 +24,6 @@
       };
     };
     spiceUSBRedirection.enable = true;
-    
-    podman = { # PURGE ASAP
-      enable = true;
-      dockerCompat = true;
-    };
   };
 
   services.spice-vdagentd.enable = true;

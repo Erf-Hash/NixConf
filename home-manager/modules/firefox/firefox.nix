@@ -1,4 +1,4 @@
-{ pkgs, firefox-addons, system, ... }:
+{ pkgs, system, ... }:
 
 {
   stylix.targets.firefox.profileNames = [ "default" ]; # PURGE
@@ -46,11 +46,11 @@
 
       userChrome = (builtins.readFile ./userChrome.css);
 
-      extensions.packages = with firefox-addons.packages.${system}; [
-        bitwarden
-        ublock-origin
-        vimium
-      ];
+      # extensions.packages = with firefox-addons.packages.${system}; [
+      #   bitwarden
+      #   ublock-origin
+      #   vimium
+      # ];
     };
   };
 }
