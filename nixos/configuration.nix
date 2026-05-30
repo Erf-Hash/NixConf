@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{pkgs, username, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,7 +7,7 @@
     #        ./modules/nixvim/nixvim.nix
     ./modules/nvf.nix
     ./modules/stylix.nix
-    ./modules/virtualization.nix
+#    ./modules/virtualization.nix
     ./modules/wireshark.nix
   ];
 
@@ -59,21 +59,25 @@
   };
 
   services.greetd = {
-    # PURGE THIS SHIT ASAP
     enable = true;
     settings = {
       initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.hyprland}/bin/start-hyprland";
         user = "${username}";
       };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${pkgs.hyprland}/bin/start-hyprland";
         user = "greeter";
       };
     };
   };
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+  programs.gamemode.enable = true;
+  
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
@@ -81,7 +85,9 @@
     "nix-command"
     "flakes"
   ];
+
   nixpkgs.config.allowUnfree = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";

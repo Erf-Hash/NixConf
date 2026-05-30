@@ -1,9 +1,10 @@
-{ pkgs, system, ... }:
+{ pkgs, system, config, firefox-addons, ... }:
 
 {
-  stylix.targets.firefox.profileNames = [ "default" ]; # PURGE
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
+
     profiles.default = {
 
       search.engines = {
@@ -46,11 +47,12 @@
 
       userChrome = (builtins.readFile ./userChrome.css);
 
-      # extensions.packages = with firefox-addons.packages.${system}; [
-      #   bitwarden
-      #   ublock-origin
-      #   vimium
-      # ];
+      extensions.packages = with firefox-addons.packages.${system}; [
+        #bitwarden
+        #ublock-origin
+        #vimium
+      ];
     };
   };
+  stylix.targets.firefox.profileNames = [ "default" ]; # Stupid Stylix warning, PURGE if you can 
 }

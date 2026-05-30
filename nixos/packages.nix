@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-stable, ... }:
 {
 
   environment.systemPackages = with pkgs; [
@@ -6,12 +6,12 @@
     git
     sqlite
     nixd
-    nixfmt-rfc-style
+    nixfmt
     gcc
     gnumake # These two can be redundant
     uv
     rustup # Impure piece of shit
-    mininet # For Research purposes only
+    mininet #or Research purposes only
     typst
     python313
     jupyter
@@ -29,11 +29,8 @@
     qjackctl
     pulsemixer
 
-    (emacsWithDoom {
-      doomDir = inputs.doom-config;  # must be an absolute path here
-      doomLocalDir = "/home/erf/.local/share/nix-doom";
-    })
     # Command-line utils
+    aria2
     fzf
     bat
     btop
@@ -50,16 +47,17 @@
     hyperfine
     proxychains
     zellij
+    rar
 
     # General apps
     alacritty
-    # hiddify-app
+    #hiddify-app
     zathura
     imv
     mpv
     firefox
-    brave # PURGE
-    telegram-desktop # USE WEB VERSION
+    brave 
+    telegram-desktop 
     android-file-transfer
     localsend
     wireshark
@@ -67,6 +65,15 @@
     
    # Gaming
    pcsx2
+   mangohud
+   protonup-rs
+   gamescope
+                #pkgs-stable.lutris-free # Change this back to unstable once the errors are fixed
+                #wineWow64Packages.stable
+                #vulkan-tools
+   #vkbasalt
+   #DXVK 
+   #VKD3D
   ];
 
   fonts.packages = with pkgs; [ ir-standard-fonts ];

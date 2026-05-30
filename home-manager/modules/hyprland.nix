@@ -1,6 +1,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
 
     settings = {
 
@@ -53,10 +54,7 @@
         ];
       };
 
-      dwindle = {
-        pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true; # You probably want this
-      };
+      dwindle.preserve_split = true; # You probably want this
 
       master = {
         new_status = "master";
@@ -89,7 +87,7 @@
         "$mainMod, F, togglefloating,"
         "$mainMod, O, exec, $menu"
         "$mainMod, P, pseudo,"
-        "$mainMod, S, togglesplit,"
+        "$mainMod, S, layoutmsg, togglesplit,"
         "$mainMod, B, exec, $browser"
         "$mainMod, T, exec, $telegram"
         "$mainMod, V, exec, $vscode"
@@ -127,9 +125,9 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
 
-        "$mainMod, PRINT, exec, hyprshot --output-folder /home/erf/Media/Pictures/Screenshots -m window"
-        ", PRINT, exec, hyprshot --output-folder /home/erf/Media/Pictures/Screenshots -m output"
-        "$mainMod SHIFT, PRINT, exec, hyprshot --output-folder /home/erf/Media/Pictures/Screenshots -m region"
+        ", PRINT, exec, hyprshot --output-folder /home/erf/Images/Screenshots -m output"
+        "$mainMod, PRINT, exec, hyprshot --output-folder /home/erf/Images/Screenshots -m region"
+        "$mainMod SHIFT, PRINT, exec, hyprshot --output-folder /home/erf/Images/Screenshots -m window"
       ];
 
       bindm = [
@@ -137,7 +135,10 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      windowrulev2 = "suppressevent maximize, class:.*";
+      windowrule = [
+        "match:class .*, suppress_event maximize"
+      ];
+
     };
   };
 

@@ -10,6 +10,7 @@
     ./modules/firefox/firefox.nix
     ./modules/vscode.nix
     ./modules/zoxide.nix
+    ./modules/doom/doom.nix
   ];
 
   home.username = "erf";
