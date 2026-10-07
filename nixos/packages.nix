@@ -5,17 +5,23 @@
     # Development
     git
     sqlite
+    (llama-cpp.override { vulkanSupport = true; })    
     nixd
     nixfmt
     gcc
+    gdb
     gnumake # These two can be redundant
     uv
     rustup # Impure piece of shit
     mininet #or Research purposes only
-    typst
     python313
     jupyter
-   (python3.withPackages (ps: with ps; [ ]))
+   (python3.withPackages (ps: with ps; [ debugpy numpy pandas matplotlib ]))
+
+
+    typst
+    (texliveGUST.withPackages (ps: with ps; [ xypic supertabular xepersian arydshln multirow tocbibind xepersian bidi zref tcolorbox pdfcol upquote adjustbox ]))
+    texliveGUST
 
     # Hyprland
     waybar
@@ -51,7 +57,6 @@
 
     # General apps
     alacritty
-    #hiddify-app
     zathura
     imv
     mpv
@@ -68,7 +73,7 @@
    mangohud
    protonup-rs
    gamescope
-                #pkgs-stable.lutris-free # Change this back to unstable once the errors are fixed
+                # lutris
                 #wineWow64Packages.stable
                 #vulkan-tools
    #vkbasalt

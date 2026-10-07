@@ -21,7 +21,7 @@
         "editor.tabSize" = 4;
         "editor.insertSpaces" = true;
         "vim.useSystemClipboard" = true;
-        "telemetry.enableTelemetry" = false;
+        "telemetry.telemetryLevel" = "off";
         "window.menuBarVisibility" = "hidden";
         "files.autoSave" = "afterDelay";
         "files.autoSaveDelay" = 100;
@@ -29,11 +29,12 @@
           "editor.defaultFormatter" = "ms-python.black-formatter";
         };
         "editor.codeActionsOnSave" = {
-          "source.fixAll" = true;
+                                        # "source.fixAll" = true;
+          "source.fixAll" = "explicit";            # boolean form is deprecated
           "source.organizeImports" = true;
         };
 
-        "nix.enableLanguageServer" = "true";
+        "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
       };
     };

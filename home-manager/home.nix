@@ -11,6 +11,7 @@
     ./modules/vscode.nix
     ./modules/zoxide.nix
     ./modules/doom/doom.nix
+    ./modules/pi.nix
   ];
 
   home.username = "erf";
