@@ -4,10 +4,9 @@
         ./hardware-configuration.nix
         ./packages.nix
         ./modules/hyprland.nix
-        #        ./modules/nixvim/nixvim.nix
-        ./modules/nvf.nix
+                #./modules/nvf.nix
         ./modules/stylix.nix
-        #    ./modules/virtualization.nix
+                #./modules/virtualization.nix
         ./modules/wireshark.nix
     ];
 
