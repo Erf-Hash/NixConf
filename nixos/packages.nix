@@ -1,85 +1,85 @@
 { pkgs, pkgs-stable, ... }:
 {
 
-  environment.systemPackages = with pkgs; [
-    # Development
-    git
-    sqlite
-    (llama-cpp.override { vulkanSupport = true; })    
-    nixd
-    nixfmt
-    gcc
-    gdb
-    gnumake # These two can be redundant
-    uv
-    rustup # Impure piece of shit
-    mininet #or Research purposes only
-    python313
-    jupyter
-   (python3.withPackages (ps: with ps; [ debugpy numpy pandas matplotlib ]))
+    environment.systemPackages = with pkgs; [
+        # Development
+        typst
+        git
+        sqlite
+        goose-cli
+        (llama-cpp.override { vulkanSupport = true; })
+        nixd
+        nixfmt
+        clang
+        gdb
+        cmake
+        xmake
+        llvm
+        python313
+        jupyter
+        (python3.withPackages (
+            ps: with ps; [
+                debugpy
+                numpy
+                pandas
+                matplotlib
+            ]
+        ))
 
+        # Hyprland
+        waybar
+        mako
+        libnotify
+        hyprshot
+        rofi
+        wl-clipboard
 
-    typst
-    (texliveGUST.withPackages (ps: with ps; [ xypic supertabular xepersian arydshln multirow tocbibind xepersian bidi zref tcolorbox pdfcol upquote adjustbox ]))
-    texliveGUST
+        # Sound
+        qjackctl
+        pulsemixer
 
-    # Hyprland
-    waybar
-    mako
-    libnotify
-    hyprshot
-    rofi
-    wl-clipboard
+        # Command-line utils
+        aria2
+        fzf
+        bat
+        btop
+        tmux
+        file
+        tldr
+        starship
+        fastfetch
+        zip
+        unzip
+        traceroute
+        ffmpeg
+        hyperfine
+        rar
 
-    # Sound
-    qjackctl
-    pulsemixer
+        # General apps
+        alacritty
+        zathura
+        imv
+        mpv
+        firefox
+        brave
+        telegram-desktop
+        android-file-transfer
+        localsend
+        wireshark
+        # musescore
 
-    # Command-line utils
-    aria2
-    fzf
-    bat
-    btop
-    tmux
-    file
-    tldr
-    starship
-    fastfetch
-    zip
-    unzip
-    proxychains
-    traceroute
-    ffmpeg
-    hyperfine
-    proxychains
-    zellij
-    rar
+        # Gaming
+        pcsx2
+        mangohud
+        protonup-rs
+        gamescope
+        lutris
+        #wineWow64Packages.stable
+        #vulkan-tools
+        #vkbasalt
+        #DXVK
+        #VKD3D
+    ];
 
-    # General apps
-    alacritty
-    zathura
-    imv
-    mpv
-    firefox
-    brave 
-    telegram-desktop 
-    android-file-transfer
-    localsend
-    wireshark
-    # musescore
-    
-   # Gaming
-   pcsx2
-   mangohud
-   protonup-rs
-   gamescope
-                # lutris
-                #wineWow64Packages.stable
-                #vulkan-tools
-   #vkbasalt
-   #DXVK 
-   #VKD3D
-  ];
-
-  fonts.packages = with pkgs; [ ir-standard-fonts ];
+    fonts.packages = with pkgs; [ ir-standard-fonts ];
 }

@@ -1,19 +1,19 @@
 {
-  programs.alacritty = {
-    enable = true;
+    programs.alacritty = {
+        enable = true;
 
-    settings = {
-      window = {
-        blur = true;
-      };
+        settings = {
+            window = {
+                blur = true;
+            };
 
-      cursor.style = {
-        shape = "Beam";
-        blinking = "On";
-      };
+            cursor.style = {
+                shape = "Beam";
+                blinking = "On";
+            };
 
-                        # terminal.shell.program = "";
-                        # terminal.shell.args = [ "-l" "welcome" ];
+            # terminal.shell.program = "";
+            # terminal.shell.args = [ "-l" "welcome" ];
+        };
     };
-  };
 }

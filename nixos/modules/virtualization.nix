@@ -1,31 +1,28 @@
 { pkgs, username, ... }:
 {
-  programs.dconf.enable = true;
+    programs.dconf.enable = true;
 
-  users.users.${username}.extraGroups = [ "libvirtd" ];
+    users.users.${username}.extraGroups = [ "libvirtd" ];
 
-  environment.systemPackages = with pkgs; [
-    virt-manager
-    virt-viewer
-    spice
-    spice-gtk
-    spice-protocol
-    virtio-win
-    win-spice
-    adwaita-icon-theme
-  ];
+    environment.systemPackages = with pkgs; [
+        virt-manager
+        virt-viewer
+        spice
+        spice-gtk
+        spice-protocol
+        virtio-win
+        win-spice
+        adwaita-icon-theme
+    ];
 
-  virtualisation = {
-    vswitch.enable = true; # PURGE
-    libvirtd = {
-      enable = true;
-      qemu = {
-        swtpm.enable = true;
-      };
+    virtualisation = {
+        libvirtd.enable = true;
+        qemu = {
+            swtpm.enable = true;
+        };
+        spiceUSBRedirection.enable = true;
     };
-    spiceUSBRedirection.enable = true;
-  };
 
-  services.spice-vdagentd.enable = true;
+    services.spice-vdagentd.enable = true;
 
 }
