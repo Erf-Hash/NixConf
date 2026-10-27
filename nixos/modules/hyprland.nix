@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
-    programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
-        # package = pkgs.hyprland.override {
-        #   enableXWayland = true;
-        # };
-    };
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    # package = pkgs.hyprland.override {
+    #   enableXWayland = true;
+    # };
+  };
 }

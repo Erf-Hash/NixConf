@@ -1,64 +1,64 @@
 {
-    pkgs,
-    system,
-    config,
-    ...
+  pkgs,
+  system,
+  config,
+  ...
 }:
 
 {
-    programs.firefox = {
-        enable = true;
-        configPath = "${config.xdg.configHome}/mozilla/firefox";
+  programs.firefox = {
+    enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
 
-        profiles.default = {
+    profiles.default = {
 
-            search.engines = {
-                "Nix Packages" = {
-                    urls = [
-                        {
-                            template = "https://search.nixos.org/packages";
-                            params = [
-                                {
-                                    name = "type";
-                                    value = "packages";
-                                }
-                                {
-                                    name = "query";
-                                    value = "{searchTerms}";
-                                }
-                            ];
-                        }
-                    ];
+      search.engines = {
+        "Nix Packages" = {
+          urls = [
+            {
+              template = "https://search.nixos.org/packages";
+              params = [
+                {
+                  name = "type";
+                  value = "packages";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
 
-                    icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                    definedAliases = [ "@nix" ];
-                };
-            };
-            search.force = true;
-
-            settings = {
-                "dom.security.https_only_mode" = true;
-                "browser.download.panel.shown" = true;
-                "browser.startup.page" = 0; # 0 means blank start page
-                "browser.contentblocking.category" = "strict";
-                "identity.fxaccounts.enabled" = false;
-                "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # This is for enabling custom CSS
-                "signon.rememberSignons" = false;
-                "privacy.clearOnShutdown.cache" = true;
-                "privacy.clearOnShutdown.cookies" = true;
-                "privacy.clearOnShutdown.downloads" = true;
-                "privacy.clearOnShutdown.formdata" = true;
-                "privacy.resistFingerprinting" = true;
-            };
-
-            userChrome = (builtins.readFile ./userChrome.css);
-
-            # extensions.packages = with firefox-addons.packages.${system}; [
-            #bitwarden
-            #ublock-origin
-            #vimium
-            # ];
+          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          definedAliases = [ "@nix" ];
         };
+      };
+      search.force = true;
+
+      settings = {
+        "dom.security.https_only_mode" = true;
+        "browser.download.panel.shown" = true;
+        "browser.startup.page" = 0; # 0 means blank start page
+        "browser.contentblocking.category" = "strict";
+        "identity.fxaccounts.enabled" = false;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # This is for enabling custom CSS
+        "signon.rememberSignons" = false;
+        "privacy.clearOnShutdown.cache" = true;
+        "privacy.clearOnShutdown.cookies" = true;
+        "privacy.clearOnShutdown.downloads" = true;
+        "privacy.clearOnShutdown.formdata" = true;
+        "privacy.resistFingerprinting" = true;
+      };
+
+      userChrome = (builtins.readFile ./userChrome.css);
+
+      # extensions.packages = with firefox-addons.packages.${system}; [
+      #bitwarden
+      #ublock-origin
+      #vimium
+      # ];
     };
-    stylix.targets.firefox.profileNames = [ "default" ];
+  };
+  stylix.targets.firefox.profileNames = [ "default" ];
 }
